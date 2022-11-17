@@ -54,4 +54,11 @@ public class UserController {
 		//image
 		return userService.findByImageByKey(imgKey);
 	}
+	
+	@GetMapping("/health")
+	public String healthCheck() {
+		//image
+		return "success";
+	}
+	
 }
