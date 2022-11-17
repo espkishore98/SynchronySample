@@ -51,6 +51,7 @@ public class UserController {
 	
 	@GetMapping("/getImageByKey/{imgKey}")
 	public ResponseEntity findImageByKey(@PathVariable String imgKey) {
+		//image
 		return userService.findByImageByKey(imgKey);
 	}
 }
