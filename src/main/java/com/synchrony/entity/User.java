@@ -14,6 +14,8 @@ public class User {
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	@Column(name="externalId")
+	private String externalId;
 	@Column(name="user_name")
 	private String userName;
 	@Column(name="password")
@@ -36,15 +38,38 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public User(Long id, String userName, String password) {
+	
+	public String getExternalId() {
+		return externalId;
+	}
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+	
+	public User( String externalId, String userName, String password) {
+		super();
+		
+		this.externalId = externalId;
+		this.userName = userName;
+		this.password = password;
+	}
+	
+	public User(Long id, String externalId, String userName, String password) {
 		super();
 		this.id = id;
+		this.externalId = externalId;
 		this.userName = userName;
 		this.password = password;
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password=" + password + "]";
+		return "User [id=" + id + ", externalId=" + externalId + ", userName=" + userName + ", password=" + password
+				+ "]";
 	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 }
